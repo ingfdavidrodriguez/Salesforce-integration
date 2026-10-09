@@ -1,0 +1,545 @@
+/* Salesforce Newsletter Form Styles */
+.sfnl-form {
+    max-width: 400px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.sfnl-form-title {
+    margin: 0 0 15px 0;
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+}
+
+.sfnl-form-description {
+    margin: 0 0 20px 0;
+    font-size: 1em;
+    color: #666;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Alignment classes */
+.sfnl-align-left {
+    text-align: left !important;
+}
+
+.sfnl-align-center {
+    text-align: center !important;
+}
+
+.sfnl-align-right {
+    text-align: right !important;
+}
+
+.sfnl-form-group {
+    margin-bottom: 15px;
+}
+
+.sfnl-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.sfnl-required {
+    color: #e74c3c;
+}
+
+.sfnl-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.10) 100%);
+    border-image-slice: 1;
+    font-size: 16px;
+    transition: border-image 0.3s ease;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.sfnl-input:focus {
+    outline: none;
+    border-image: linear-gradient(180deg, rgba(52, 152, 219, 0.40) 0%, rgba(52, 152, 219, 0.20) 100%);
+    border-image-slice: 1;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.sfnl-input.error {
+    border-image: linear-gradient(180deg, rgba(231, 76, 60, 0.40) 0%, rgba(231, 76, 60, 0.20) 100%);
+    border-image-slice: 1;
+}
+
+.sfnl-submit-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sfnl-submit-btn:hover:not(:disabled) {
+    background: #2980b9;
+}
+
+.sfnl-submit-btn:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+.sfnl-btn-loading {
+    display: none;
+}
+
+.sfnl-submit-btn.loading .sfnl-btn-text {
+    display: none;
+}
+
+.sfnl-submit-btn.loading .sfnl-btn-loading {
+    display: inline;
+}
+
+.sfnl-messages {
+    margin-top: 15px;
+}
+
+.sfnl-message {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.sfnl-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.sfnl-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.sfnl-notice {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.sfnl-notice-warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.sfnl-notice a {
+    color: #856404;
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .sfnl-form {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .sfnl-input,
+    .sfnl-submit-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Loading animation */
+@keyframes sfnl-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sfnl-submit-btn.loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: sfnl-spin 1s ease-in-out infinite;
+}
+
+/* Admin styles for submissions page */
+.status-success {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.status-failed {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.status-pending {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+/* Contact form specific styles */
+.sfnl-contact-form {
+    max-width: 700px;
+    padding: 30px;
+}
+
+.sfnl-form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0;
+}
+
+.sfnl-form-row .sfnl-form-group {
+    margin-bottom: 20px;
+}
+
+.sfnl-half {
+    flex: 1;
+    min-width: 0;
+}
+
+.sfnl-select {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.10) 100%);
+    border-image-slice: 1;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-image 0.3s ease;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: url('../images/IMPEX-Glyph.svg');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+.sfnl-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.10) 100%);
+    border-image-slice: 1;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-image 0.3s ease;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.sfnl-select:focus,
+.sfnl-textarea:focus {
+    outline: none;
+    border-image: linear-gradient(180deg, rgba(52, 152, 219, 0.40) 0%, rgba(52, 152, 219, 0.20) 100%);
+    border-image-slice: 1;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.sfnl-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.sfnl-checkbox-group {
+    margin: 20px 0;
+}
+
+.sfnl-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+}
+
+.sfnl-checkbox {
+    margin-right: 10px;
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.sfnl-checkbox-label a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.sfnl-checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for contact form */
+@media (max-width: 768px) {
+    .sfnl-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .sfnl-half {
+        width: 100%;
+    }
+
+    .sfnl-contact-form {
+        padding: 20px;
+    }
+}
+
+/* Lead Generation Modal Styles */
+.sfnl-modal {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.sfnl-modal.sfnl-modal-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sfnl-modal-content {
+    position: relative;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: sfnl-modal-slide-down 0.4s ease-out;
+}
+
+@keyframes sfnl-modal-slide-down {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.sfnl-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #FFFFFF;
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 1;
+    text-decoration: none;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.sfnl-modal-close:hover {
+    color: #CCCCCC;
+}
+
+.sfnl-modal .sfnl-leadgen-form {
+    border: none;
+    border-radius: 0;
+    max-width: 100%;
+    background: #ffffff;
+}
+
+/* Prevent body scroll when modal is open */
+body.sfnl-modal-open {
+    overflow: hidden;
+}
+
+/* File input styles */
+.sfnl-file-input {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.sfnl-help-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #777;
+}
+
+/* Button Effect Styles */
+.btn-effect {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 24px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: visible;
+    line-height: normal;
+}
+
+/* Fade Border Effect */
+.fade-left-right {
+    background: transparent;
+    color: #333;
+    border: 2px solid transparent;
+    border-image: linear-gradient(147deg, rgba(22, 21, 25, 0.50) 0%, rgba(22, 21, 25, 0.05) 52.51%, rgba(22, 21, 25, 0.25) 100.99%);
+    border-image-slice: 1;
+    position: relative;
+    transition: color 0.3s ease-out, border-image 0.3s ease-out;
+    z-index: 1;
+}
+
+/* Background Fade on Hover */
+.fade-left-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(147deg, rgba(243, 108, 33, 0.30) 0%, rgba(243, 108, 33, 0.03) 52.51%, rgba(243, 108, 33, 0.15) 100.99%);
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* SVG border animation */
+.fade-left-right svg {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.fade-left-right svg rect {
+    width: 100%;
+    height: 100%;
+    x: 0;
+    y: 0;
+    fill: none;
+    stroke-width: 4;
+    stroke-dasharray: 0 400;
+    stroke-dashoffset: 0;
+    transition: stroke-dasharray 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-left-right:hover svg rect {
+    stroke-dasharray: 400 0;
+}
+
+.fade-left-right:hover::before {
+    opacity: 1;
+}
+
+.fade-left-right:hover {
+    color: #f36c21;
+    border-image: linear-gradient(147deg, rgba(22, 21, 25, 0.00) 0%, rgba(22, 21, 25, 0.00) 52.51%, rgba(22, 21, 25, 0.00) 100.99%);
+    border-image-slice: 1;
+}
+
+/* Button as button element */
+button.btn-effect {
+    width: 100%;
+    border: none;
+    font-family: inherit;
+}
+
+button.fade-left-right {
+    border: 2px solid transparent;
+}
+
+/* Specific gradient IDs for each form */
+#sfnl-submit-btn svg rect {
+    stroke: url(#borderGradient-newsletter);
+}
+
+#sfnl-contact-submit-btn svg rect {
+    stroke: url(#borderGradient-contact);
+}
+
+#sfnl-leadgen-submit-btn svg rect {
+    stroke: url(#borderGradient-leadgen);
+}
+
+#sfnl-job-submit-btn svg rect {
+    stroke: url(#borderGradient-job);
+}
+
+#sfnl-job-cv-btn svg rect {
+    stroke: url(#borderGradient-cv);
+}
+
+/* File upload button styles */
+#sfnl-job-cv-btn {
+    width: auto;
+    min-width: 200px;
+    margin-bottom: 10px;
+}
+
+/* Filename display styles */
+.sfnl-filename-display {
+    padding: 10px 12px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    font-size: 14px !important;
+    color: #555 !important;
+    background-color: rgba(243, 108, 33, 0.05) !important;
+    border: 2px solid transparent !important;
+    border-image: linear-gradient(180deg, rgba(243, 108, 33, 0.20) 0%, rgba(243, 108, 33, 0.10) 100%) !important;
+    border-image-slice: 1 !important;
+    border-radius: 4px !important;
+    display: none !important;
+    word-break: break-all !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.sfnl-filename-display.sfnl-file-selected {
+    display: block !important;
+}
